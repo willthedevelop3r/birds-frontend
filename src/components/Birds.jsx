@@ -46,16 +46,31 @@ const Birds = () => {
         <h2 className='font-bold'>{bird.name}</h2>
         <p>{bird.description}</p>
         <p>
-          {attributionText || 'No attribution information available'}
+          <span className='text-sm'>
+            {attributionText || 'No attribution information available'}
+          </span>
           {attributionLink && (
+            <>
+              <a
+                className='text-sm text-blue-500 hover:text-blue-800'
+                href={attributionLink}
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                CC BY{ccVersion && '-'}
+                {ccVersion}
+              </a>
+              {bird.page_url && <span>, </span>}
+            </>
+          )}
+          {bird.page_url && (
             <a
-              className='text-blue-500 hover:text-blue-800'
-              href={attributionLink}
+              className='text-sm text-blue-500 hover:text-blue-800 break-words'
+              href={bird.page_url}
               target='_blank'
               rel='noopener noreferrer'
             >
-              CC BY{ccVersion && '-'}
-              {ccVersion}
+              More Info
             </a>
           )}
         </p>
