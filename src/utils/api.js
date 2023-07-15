@@ -1,5 +1,7 @@
+require('dotenv').config();
+
 function generateBird() {
-  return fetch('http://localhost:5000/birds/generate', {
+  return fetch(process.env.DATABASE_URL + '/birds/generate', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
