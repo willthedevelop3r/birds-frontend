@@ -23,6 +23,7 @@ const Birds = () => {
   let attributionText = bird?.attribute || '';
   let attributionLink = '';
   let ccVersion = '';
+  let licenseType = '';
 
   if (bird?.attribute?.includes('<')) {
     const attribution = bird.attribute.split('<');
@@ -30,6 +31,7 @@ const Birds = () => {
     const ccParts = attribution[0].split(/CC BY-SA|CC BY/);
     attributionText = ccParts[0];
     ccVersion = ccParts[ccParts.length - 1].trim();
+    licenseType = attribution[0].includes('CC BY-SA') ? 'SA' : '';
   }
 
   if (error) return <div>Error loading bird data.</div>;
@@ -57,8 +59,9 @@ const Birds = () => {
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                CC BY{ccVersion && '-'}
-                {ccVersion}
+                CC BY{licenseType && '-'}
+                {licenseType}
+                {ccVersion && ` ${ccVersion}`}
               </a>
               {bird.page_url && <span>, </span>}
             </>
