@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 function generateBird() {
-  return fetch(process.env.DATABASE_URL + '/birds/generate', {
+  return fetch(process.env.REACT_APP_DATABASE_URL + '/birds/generate', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
