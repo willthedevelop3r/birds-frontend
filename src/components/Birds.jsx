@@ -48,9 +48,7 @@ const Birds = () => {
         <h2 className='font-bold'>{bird.name}</h2>
         <p>{bird.description}</p>
         <p>
-          <span className='text-sm'>
-            {attributionText || 'No attribution information available'}
-          </span>
+          <span className='text-sm'>{attributionText}</span>
           {attributionLink && (
             <>
               <a
