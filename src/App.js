@@ -1,13 +1,13 @@
 import Background from './components/Background';
 import Birds from './components/Birds';
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
 
 function App() {
   return (
     <div>
       <Background />
       <Birds />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
