@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import generateBird from '../utils/api';
 
-const Birds = () => {
+const GenerateBird = () => {
   const [bird, setBird] = useState(null);
   const [error, setError] = useState(null);
 
@@ -86,4 +86,4 @@ const Birds = () => {
   );
 };
 
-export default Birds;
+export default GenerateBird;

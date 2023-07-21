@@ -9,21 +9,29 @@ const Navbar = () => {
     setShowMenu(!showMenu);
   };
 
+  // Array for navigation items
+  const navItems = [
+    { title: 'Home', link: '/' },
+    { title: 'About', link: '/about' },
+    { title: 'Birds', link: '/birds' },
+    { title: 'Generate', link: '/generate' },
+  ];
+
   return (
     <nav className='flex items-center justify-between bg-gray-700 text-white p-4'>
-      <div className='flex items-center font-bold text-2xl sm:text-3xl md:text-4xl pacifico'>
+      <div className='flex items-center font-bold text-2xl sm:text-3xl md:text-4xl'>
         Bird Generator
       </div>
       <div className='hidden sm:flex items-center text-m sm:text-l'>
-        <a href='/' className='mr-4 text-m sm:text-l'>
-          Home
-        </a>
-        <a href='/about' className='mr-4 text-m sm:text-l'>
-          About
-        </a>
-        <a href='/birds' className='mr-4 text-m sm:text-l'>
-          Birds
-        </a>
+        {navItems.map((item) => (
+          <a
+            key={item.title}
+            href={item.link}
+            className='mr-4 text-m sm:text-l'
+          >
+            {item.title}
+          </a>
+        ))}
       </div>
       <div className='sm:hidden'>
         {showMenu ? (
@@ -40,15 +48,15 @@ const Navbar = () => {
       </div>
       {showMenu && (
         <div className='sm:hidden absolute top-16 right-0 left-0 bg-gray-700 p-4 w-full text-center'>
-          <a href='/' className='block my-2 text-white'>
-            Home
-          </a>
-          <a href='/about' className='block my-2 text-white'>
-            About
-          </a>
-          <a href='/birds' className='block my-2 text-white'>
-            Birds
-          </a>
+          {navItems.map((item) => (
+            <a
+              key={item.title}
+              href={item.link}
+              className='block my-2 text-white'
+            >
+              {item.title}
+            </a>
+          ))}
         </div>
       )}
     </nav>
