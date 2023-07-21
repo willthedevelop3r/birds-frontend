@@ -71,7 +71,7 @@ const Birds = () => {
               target='_blank'
               rel='noopener noreferrer'
             >
-              More Info
+              Copyright Info
             </a>
           )}
         </p>
