@@ -1,20 +1,28 @@
 import Background from './components/Background';
+import Home from './components/Home';
 import Birds from './components/Birds';
 import Navbar from './components/NavBar';
 import Footer from './components/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className='flex flex-col min-h-screen'>
-      <div>
-        <Navbar />
+    <Router>
+      <div className='flex flex-col min-h-screen'>
+        <div>
+          <Navbar />
+        </div>
+        <div className='flex-1'>
+          <Background />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/birds' element={<Birds />} />
+            {/* Add more routes for other pages if needed */}
+          </Routes>
+        </div>
+        <Footer />
       </div>
-      <div className='flex-1'>
-        <Background />
-        <Birds />
-      </div>
-      <Footer />
-    </div>
+    </Router>
   );
 }
 
