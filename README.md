@@ -2,7 +2,7 @@
 
 [View it live here](https://birdgenerator.onrender.com)
 
-![Bird Generator App](./src/assests/birds.png)
+![Bird Generator App](./src/assets/birds.png)
 
 ## About
 
