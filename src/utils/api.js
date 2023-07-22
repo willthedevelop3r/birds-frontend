@@ -3,7 +3,7 @@ const baseURL =
     ? 'http://localhost:5000'
     : process.env.REACT_APP_DATABASE_URL;
 
-function generateBird() {
+async function generateBird() {
   // const baseURL =
   //   process.env.NODE_ENV === 'development'
   //     ? 'http://localhost:5000'
@@ -24,8 +24,24 @@ function generateBird() {
     });
 }
 
-function fetchBirdList() {
+async function fetchBirdList() {
   return fetch(baseURL + '/birds', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      return data;
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+}
+
+async function read(birdId) {
+  return fetch(`${baseURL}/birds/${birdId}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -43,4 +59,5 @@ function fetchBirdList() {
 module.exports = {
   fetchBirdList,
   generateBird,
+  read,
 };

@@ -4,6 +4,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Birds from './components/Birds';
 import GenerateBird from './components/GenerateBird';
+import BirdDetails from './components/BirdDetails';
 import Footer from './components/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -21,6 +22,7 @@ function App() {
             <Route path='/about' element={<About />} />
             <Route path='/generate' element={<GenerateBird />} />
             <Route path='/birds' element={<Birds />} />
+            <Route path='/birds/:birdId' element={<BirdDetails />} />
           </Routes>
         </div>
         <Footer />
