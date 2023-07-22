@@ -24,7 +24,7 @@ const About = () => {
         </p>
       </div>
       <Link
-        to='/generate' // Specify the path to navigate to
+        to='/generate'
         className='mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
       >
         Generate Bird

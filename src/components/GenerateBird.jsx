@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import generateBird from '../utils/api';
+import { generateBird } from '../utils/api';
 
 const GenerateBird = () => {
   const [bird, setBird] = useState(null);

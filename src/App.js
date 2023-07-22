@@ -1,9 +1,10 @@
 import Background from './components/Background';
-import Home from './components/Home';
-import GenerateBird from './components/GenerateBird';
 import Navbar from './components/NavBar';
-import Footer from './components/Footer';
+import Home from './components/Home';
 import About from './components/About';
+import Birds from './components/Birds';
+import GenerateBird from './components/GenerateBird';
+import Footer from './components/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
+            <Route path='/birds' element={<Birds />} />
             <Route path='/generate' element={<GenerateBird />} />
           </Routes>
         </div>
