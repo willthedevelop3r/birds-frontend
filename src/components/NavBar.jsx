@@ -12,8 +12,8 @@ const Navbar = () => {
   const navItems = [
     { title: 'Home', link: '/' },
     { title: 'About', link: '/about' },
-    { title: 'Generate', link: '/generate' },
     { title: 'Birds', link: '/birds' },
+    { title: 'Generate', link: '/generate' },
   ];
 
   return (
