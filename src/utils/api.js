@@ -52,7 +52,7 @@ async function read(birdId) {
 }
 
 module.exports = {
+  read,
   fetchBirdList,
   generateBird,
-  read,
 };
