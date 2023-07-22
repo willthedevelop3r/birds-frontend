@@ -3,7 +3,7 @@ const baseURL =
     ? 'http://localhost:5000'
     : process.env.REACT_APP_DATABASE_URL;
 
-async function generateBird() {
+export async function generateBird() {
   return fetch(baseURL + '/birds/generate', {
     method: 'GET',
     headers: {
@@ -19,7 +19,7 @@ async function generateBird() {
     });
 }
 
-async function fetchBirdList() {
+export async function fetchBirdList() {
   return fetch(baseURL + '/birds', {
     method: 'GET',
     headers: {
@@ -35,7 +35,7 @@ async function fetchBirdList() {
     });
 }
 
-async function readBird(birdId) {
+export async function read(birdId) {
   return fetch(`${baseURL}/birds/${birdId}`, {
     method: 'GET',
     headers: {
@@ -50,9 +50,3 @@ async function readBird(birdId) {
       console.error('Error:', error);
     });
 }
-
-module.exports = {
-  readBird,
-  fetchBirdList,
-  generateBird,
-};
