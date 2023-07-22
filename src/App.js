@@ -3,6 +3,7 @@ import Home from './components/Home';
 import GenerateBird from './components/GenerateBird';
 import Navbar from './components/NavBar';
 import Footer from './components/Footer';
+import About from './components/About';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -16,8 +17,8 @@ function App() {
           <Background />
           <Routes>
             <Route path='/' element={<Home />} />
+            <Route path='/about' element={<About />} />
             <Route path='/generate' element={<GenerateBird />} />
-            {/* Add more routes for other pages if needed */}
           </Routes>
         </div>
         <Footer />

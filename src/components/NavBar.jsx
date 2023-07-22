@@ -9,7 +9,6 @@ const Navbar = () => {
     setShowMenu(!showMenu);
   };
 
-  // Array for navigation items
   const navItems = [
     { title: 'Home', link: '/' },
     { title: 'About', link: '/about' },
