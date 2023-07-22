@@ -11,7 +11,7 @@ const Birds = () => {
     fetchBirdList()
       .then((data) => {
         setBirds(data.data);
-        setLoading(false); // Set loading to false after data is fetched
+        setLoading(false);
       })
       .catch((error) => {
         console.error('Failed to fetch bird data:', error);

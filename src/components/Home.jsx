@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <div className='flex flex-col items-center mt-[20px] sm:mt-[60px] mb-8 px-4 sm:px-8'>
-      <div className='mt-16 bg-white shadow-lg rounded-lg overflow-hidden p-4 max-w-xl w-full'>
+    <div className='flex flex-col items-center justify-center h-screen mb-8 px-4 sm:px-8'>
+      <div className='bg-white shadow-lg rounded-lg overflow-hidden p-4 max-w-xl w-full'>
         <h3 className='text-center font-bold text-2xl'>
           WELCOME TO BIRD GENERATOR!
         </h3>
@@ -15,7 +15,7 @@ const Home = () => {
         </p>
       </div>
       <Link
-        to='/generate' // Specify the path to navigate to
+        to='/generate'
         className='mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
       >
         Generate Bird
