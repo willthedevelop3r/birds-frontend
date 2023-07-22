@@ -47,12 +47,6 @@ const Birds = () => {
           </ul>
         )}
       </div>
-      <Link
-        to='/generate'
-        className='mt-4 bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded'
-      >
-        Generate Bird
-      </Link>
     </div>
   );
 };
