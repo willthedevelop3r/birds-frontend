@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { read } from '../utils/api';
+import { readBird } from '../utils/api';
 
 const BirdDetails = () => {
   const { birdId } = useParams();
@@ -8,7 +8,7 @@ const BirdDetails = () => {
   const [error, setError] = React.useState(null);
 
   const fetchBird = () => {
-    read(birdId)
+    readBird(birdId)
       .then((data) => {
         setBird(data.data);
       })

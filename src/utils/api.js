@@ -35,7 +35,7 @@ async function fetchBirdList() {
     });
 }
 
-async function read(birdId) {
+async function readBird(birdId) {
   return fetch(`${baseURL}/birds/${birdId}`, {
     method: 'GET',
     headers: {
@@ -52,7 +52,7 @@ async function read(birdId) {
 }
 
 module.exports = {
-  read,
+  readBird,
   fetchBirdList,
   generateBird,
 };
