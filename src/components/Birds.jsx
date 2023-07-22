@@ -16,7 +16,7 @@ const Birds = () => {
       .catch((error) => {
         console.error('Failed to fetch bird data:', error);
         setError(error);
-        setLoading(false); // Set loading to false in case of an error
+        setLoading(false);
       });
   };
 
@@ -25,25 +25,27 @@ const Birds = () => {
   }, []);
 
   if (error) return <div>Error loading bird data.</div>;
-  if (loading) return <div>Loading...</div>; // Show "Loading..." while fetching data
 
   return (
     <div className='flex flex-col items-center mb-8 px-4 sm:px-8'>
       <div className='mt-16 bg-white shadow-lg rounded-lg overflow-hidden p-4 max-w-xl w-full'>
         <h3 className='text-center font-bold text-2xl'>BIRDS</h3>
-        <ul className='text-center sm:text-lg'>
-          {birds.map((bird, index) => (
-            <li key={index}>
-              <Link
-                to={`/birds/${bird.id}`}
-                className='text-blue-500 hover:text-blue-800'
-              >
-                {bird.name}
-              </Link>{' '}
-              {/* Link to the BirdDetails page */}
-            </li>
-          ))}
-        </ul>
+        {loading ? (
+          <div className='text-center'>Loading...</div>
+        ) : (
+          <ul className='text-center sm:text-lg'>
+            {birds.map((bird, index) => (
+              <li key={index}>
+                <Link
+                  to={`/birds/${bird.id}`}
+                  className='text-blue-500 hover:text-blue-800'
+                >
+                  {bird.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
       <Link
         to='/generate'
