@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { fetchBirdList } from '../utils/api';
 
 const Birds = () => {
@@ -30,7 +29,7 @@ const Birds = () => {
     <div className='flex flex-col items-center mb-8 px-4 sm:px-8'>
       <div className='mt-16 bg-white shadow-lg rounded-lg overflow-hidden p-4 max-w-xl w-full'>
         <h3 className='text-center font-bold text-2xl'>BIRDS</h3>
-        {loading ? ( // Conditionally render "Loading..." inside the card
+        {loading ? (
           <div className='text-center'>Loading...</div>
         ) : (
           <ul className='text-center sm:text-lg'>
@@ -40,12 +39,6 @@ const Birds = () => {
           </ul>
         )}
       </div>
-      <Link
-        to='/generate'
-        className='mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
-      >
-        Generate Bird
-      </Link>
     </div>
   );
 };

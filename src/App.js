@@ -19,8 +19,8 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
-            <Route path='/birds' element={<Birds />} />
             <Route path='/generate' element={<GenerateBird />} />
+            <Route path='/birds' element={<Birds />} />
           </Routes>
         </div>
         <Footer />
