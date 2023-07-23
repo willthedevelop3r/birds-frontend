@@ -19,3 +19,5 @@ Bird Generator is a full-stack application developed with the goal of providing 
 - Frontend: React, JavaScript, Tailwind CSS
 - Backend: Node.js, Express.js
 - Database: PostgreSQL
+
+Backend of project is currently set to private.
