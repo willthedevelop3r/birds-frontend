@@ -10,16 +10,16 @@ const About = () => {
           sharing that excitement with others. As an educational tool, it allows
           me to delve into the avian realm and explore a vast array of bird
           species in America. The concept is simple: with just a click of a
-          button, Bird Generator presents you with random bird species,
-          accompanied by interesting and informative facts about each one. It's
-          a fun and engaging way to immerse yourself in the captivating world of
-          birds, whether you're an experienced birdwatcher or just starting to
-          discover the wonders of ornithology. I sincerely hope that Bird
-          Generator sparks your curiosity and encourages you to appreciate the
-          beauty and diversity of birds as much as it has for me. Join me on
-          this journey of discovery, and let's celebrate the wonders of nature,
-          one bird at a time. Thank you for being a part of this educational
-          adventure, and happy birding!
+          button, Bird Generator delivers you bird species, accompanied by
+          interesting and informative facts about each one. It's a fun and
+          engaging way to immerse yourself in the captivating world of birds,
+          whether you're an experienced birdwatcher or just starting to discover
+          the wonders of ornithology. I sincerely hope that Bird Generator
+          sparks your curiosity and encourages you to appreciate the beauty and
+          diversity of birds as much as it has for me. Join me on this journey
+          of discovery, and let's celebrate the wonders of nature, one bird at a
+          time. Thank you for being a part of this educational adventure, and
+          happy birding!
         </p>
       </div>
     </div>

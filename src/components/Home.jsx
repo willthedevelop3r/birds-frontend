@@ -9,8 +9,8 @@ const Home = () => {
           WELCOME TO BIRD GENERATOR!
         </h3>
         <p className='text-center sm:text-lg'>
-          This is a fun and educational tool that allows you to generate random
-          bird species along with interesting facts about them. Click the button
+          This is a fun and educational tool that allows you to generate bird
+          species along with interesting facts about them. Click the button
           below, generate a bird, and let the adventure begin! Happy birding!
         </p>
       </div>
