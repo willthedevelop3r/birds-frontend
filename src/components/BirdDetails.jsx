@@ -4,8 +4,8 @@ import { read } from '../utils/api';
 
 const BirdDetails = () => {
   const { birdId } = useParams();
-  const [bird, setBird] = React.useState(null);
-  const [error, setError] = React.useState(null);
+  const [bird, setBird] = useState(null);
+  const [error, setError] = useState(null);
 
   const fetchBird = () => {
     read(birdId)
