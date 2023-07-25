@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div className='flex flex-col items-center mb-8 px-4 sm:px-8'>
       <div className='mt-16 bg-white shadow-lg rounded-lg overflow-hidden p-4 max-w-xl w-full'>
-        <h3 className='text-center font-bold text-2xl'>ABOUT</h3>
+        <h3 className='text-center font-bold text-2xl'>About</h3>
         <p className='text-center sm:text-lg'>
           Bird Generator was born out of my passion for learning about birds and
           sharing that excitement with others. As an educational tool, it allows
