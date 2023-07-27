@@ -9,8 +9,8 @@ const About = () => {
           Bird Generator was born out of my passion for learning about birds and
           sharing that excitement with others. As an educational tool, it allows
           me to delve into the avian realm and explore a vast array of bird
-          species in America. The concept is simple: with just a click of a
-          button, Bird Generator delivers you bird species, accompanied by
+          species in North America. The concept is simple: with just a click of
+          a button, Bird Generator delivers you bird species, accompanied by
           interesting and informative facts about each one. It's a fun and
           engaging way to immerse yourself in the captivating world of birds,
           whether you're an experienced birdwatcher or just starting to discover
