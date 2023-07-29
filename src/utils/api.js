@@ -11,9 +11,7 @@ export async function generateBird() {
     },
   })
     .then((response) => response.json())
-    .then((data) => {
-      return data;
-    })
+    .then((data) => data)
     .catch((error) => {
       console.error('Error:', error);
     });
@@ -27,9 +25,7 @@ export async function fetchBirdList() {
     },
   })
     .then((response) => response.json())
-    .then((data) => {
-      return data;
-    })
+    .then((data) => data)
     .catch((error) => {
       console.error('Error:', error);
     });
@@ -43,9 +39,7 @@ export async function read(birdId) {
     },
   })
     .then((response) => response.json())
-    .then((data) => {
-      return data;
-    })
+    .then((data) => data)
     .catch((error) => {
       console.error('Error:', error);
     });

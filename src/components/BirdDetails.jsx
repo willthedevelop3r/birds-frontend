@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { read } from '../utils/api';
+import { useParams, useNavigate } from 'react-router-dom';
+import { read, fetchBirdList } from '../utils/api';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 const BirdDetails = () => {
   const { birdId } = useParams();
   const [bird, setBird] = useState(null);
   const [error, setError] = useState(null);
+  const [birds, setBirds] = useState(null);
+  const navigate = useNavigate();
 
-  const fetchBird = () => {
+  useEffect(() => {
     read(birdId)
       .then((data) => {
         setBird(data.data);
@@ -16,11 +19,42 @@ const BirdDetails = () => {
         console.error('Failed to fetch bird details:', error);
         setError(error);
       });
+
+    fetchBirdList()
+      .then((data) => {
+        setBirds(data.data);
+      })
+      .catch((error) => {
+        console.error('Failed to fetch all birds:', error);
+        setError(error);
+      });
+  }, [birdId]);
+
+  const goNextBird = () => {
+    if (!birds) {
+      console.error('No birds found');
+      return;
+    }
+
+    const birdIds = birds.map((bird) => bird.id);
+    const currentIndex = birdIds.indexOf(Number(birdId));
+    if (currentIndex < birdIds.length - 1) {
+      navigate(`/birds/${birdIds[currentIndex + 1]}`);
+    }
   };
 
-  useEffect(() => {
-    fetchBird();
-  }, []);
+  const goPreviousBird = () => {
+    if (!birds) {
+      console.error('No birds found');
+      return;
+    }
+
+    const birdIds = birds.map((bird) => bird.id);
+    const currentIndex = birdIds.indexOf(Number(birdId));
+    if (currentIndex > 0) {
+      navigate(`/birds/${birdIds[currentIndex - 1]}`);
+    }
+  };
 
   let attributionText = bird?.attribute || '';
   let attributionLink = '';
@@ -77,6 +111,20 @@ const BirdDetails = () => {
             </a>
           )}
         </p>
+      </div>
+      <div className='mt-4 flex space-x-2'>
+        <button
+          className='rounded-full p-2 bg-blue-600 text-white'
+          onClick={goPreviousBird}
+        >
+          <IoIosArrowBack size={24} />
+        </button>
+        <button
+          className='rounded-full p-2 bg-blue-600 text-white'
+          onClick={goNextBird}
+        >
+          <IoIosArrowForward size={24} />
+        </button>
       </div>
     </div>
   );
