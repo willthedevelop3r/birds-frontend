@@ -56,20 +56,6 @@ const BirdDetails = () => {
     }
   };
 
-  let attributionText = bird?.attribute || '';
-  let attributionLink = '';
-  let ccVersion = '';
-  let licenseType = '';
-
-  if (bird?.attribute?.includes('<')) {
-    const attribution = bird.attribute.split('<');
-    attributionLink = attribution[1]?.split('>')[0];
-    const ccParts = attribution[0].split(/CC BY-SA|CC BY/);
-    attributionText = ccParts[0];
-    ccVersion = ccParts[ccParts.length - 1].trim();
-    licenseType = attribution[0].includes('CC BY-SA') ? 'SA' : '';
-  }
-
   if (error) return <div>Error loading bird details.</div>;
   if (!bird) return <div>Loading...</div>;
 
@@ -83,34 +69,6 @@ const BirdDetails = () => {
       <div className='mt-2 sm:mt-4 bg-white shadow-lg rounded-lg overflow-hidden p-4 max-w-xl w-full'>
         <h2 className='font-bold'>{bird.name}</h2>
         <p>{bird.description}</p>
-        <p>
-          <span className='text-sm'>{attributionText}</span>
-          {attributionLink && (
-            <>
-              <a
-                className='text-sm text-blue-500 hover:text-blue-800'
-                href={attributionLink}
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                CC BY{licenseType && '-'}
-                {licenseType}
-                {ccVersion && ` ${ccVersion}`}
-              </a>
-              {bird.page_url && <span>, </span>}
-            </>
-          )}
-          {bird.page_url && (
-            <a
-              className='text-sm text-blue-500 hover:text-blue-800 break-words'
-              href={bird.page_url}
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              Copyright Info
-            </a>
-          )}
-        </p>
       </div>
       <div className='mt-4 flex space-x-2'>
         <button
