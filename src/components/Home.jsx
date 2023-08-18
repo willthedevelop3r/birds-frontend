@@ -6,7 +6,7 @@ const Home = () => {
     <div className='flex flex-col items-center justify-center h-screen mb-8 px-4 sm:px-8'>
       <div className='bg-white shadow-lg rounded-lg overflow-hidden p-4 max-w-xl w-full'>
         <h3 className='text-center font-bold text-2xl'>
-          WELCOME TO BIRD GENERATOR!
+          Welcome to Bird Generator!
         </h3>
         <p className='text-center sm:text-lg'>
           This is a fun and educational tool that allows you to generate bird
