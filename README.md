@@ -20,4 +20,6 @@ Bird Generator is a full-stack application developed with the goal of providing 
 - Backend: Node.js, Express.js
 - Database: PostgreSQL
 
-Backend of project is currently set to private.
+Original Backend of project is currently set to private.
+
+[View copy of backend code here](https://github.com/willthedevelop3r/birds-backend-copy)
