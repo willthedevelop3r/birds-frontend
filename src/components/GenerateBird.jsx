@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { generateBird } from '../utils/api';
+import { generateBird, getSignedImageUrl } from '../utils/api';
 
 const GenerateBird = () => {
   const [bird, setBird] = useState(null);
@@ -8,7 +8,11 @@ const GenerateBird = () => {
   const fetchBird = () => {
     generateBird()
       .then((data) => {
-        setBird(data.data);
+        const birdData = data.data;
+        return getSignedImageUrl(birdData.image_url).then((signedUrl) => {
+          birdData.signedImageUrl = signedUrl; // Add the signed URL to bird data
+          setBird(birdData);
+        });
       })
       .catch((error) => {
         console.error('Failed to fetch bird data:', error);
@@ -27,7 +31,7 @@ const GenerateBird = () => {
     <div className='flex flex-col items-center justify-center min-h-screen text-center p-4'>
       <img
         className='object-contain h-64 sm:h-96 w-full block mt-2 sm:mt-4'
-        src={bird.image_url}
+        src={bird.signedImageUrl}
         alt={bird.name}
       />
       <div className='mt-2 sm:mt-4 bg-white shadow-lg rounded-lg overflow-hidden p-4 max-w-xl w-full'>

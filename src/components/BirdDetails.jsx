@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { read, fetchBirdList } from '../utils/api';
+import { read, fetchBirdList, getSignedImageUrl } from '../utils/api';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 const BirdDetails = () => {
@@ -13,7 +13,11 @@ const BirdDetails = () => {
   useEffect(() => {
     read(birdId)
       .then((data) => {
-        setBird(data.data);
+        const birdData = data.data;
+        return getSignedImageUrl(birdData.image_url).then((signedUrl) => {
+          birdData.signedImageUrl = signedUrl; // Add the signed URL to bird data
+          setBird(birdData);
+        });
       })
       .catch((error) => {
         console.error('Failed to fetch bird details:', error);
@@ -63,7 +67,7 @@ const BirdDetails = () => {
     <div className='flex flex-col items-center justify-center min-h-screen text-center p-4'>
       <img
         className='object-contain h-64 sm:h-96 w-full block mt-2 sm:mt-4'
-        src={bird.image_url}
+        src={bird.signedImageUrl}
         alt={bird.name}
       />
       <div className='mt-2 sm:mt-4 bg-white shadow-lg rounded-lg overflow-hidden p-4 max-w-xl w-full'>

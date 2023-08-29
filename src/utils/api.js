@@ -44,3 +44,11 @@ export async function read(birdId) {
       console.error('Error:', error);
     });
 }
+
+export async function getSignedImageUrl(imageName) {
+  return fetch(`${baseURL}/image/${imageName}`)
+    .then((response) => response.url)
+    .catch((error) => {
+      console.error('Error fetching signed URL:', error);
+    });
+}
