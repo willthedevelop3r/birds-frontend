@@ -1,6 +1,6 @@
 # Bird Generator App
 
-This version is obsolete, new version set to private.
+This code version is obsolete, new code version is set to private.
 
 ![Bird Generator App](./src/assets/birds.png)
 
