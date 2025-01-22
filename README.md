@@ -1,6 +1,6 @@
 # Bird Generator App
 
-[View it live here](https://birdgenerator.onrender.com)
+This version is obsolete, new version set to private.
 
 ![Bird Generator App](./src/assets/birds.png)
 
